@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+ 
+<body>
+<title>Input</title>
+<h2>Musician guess by Matthew McArthur</h2>
+
+<form>
+    <label for="form1_musician">Enter the secret musician name </label>
+    <input type ="password" id="form1_musician" name="form1_musician" value="John Lennon"> <br>
+
+    <label for="form1_guess">Guess the Musician </label>
+    <input type ="text" id="form1_guess" name="form1_guess" autofocus> <br>
+
+    <input type="button" onclick="checkGuess()" value="Check the guess">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+
+var correct =0;
+var wrong =0;
+
+function checkGuess (){
+    console.log("Getting form values")
+    musician = document.getElementById("form1_musician").value
+    guess = document.getElementById("form1_guess").value
+    correct = confirm("Are these the values? "+musician+" and "+guess)
+    
+    out = document.getElementById("result")
+    if(correct){
+        out.innerHTML = "You got it right!"
+    } else {
+        out.innerHTML = "Wrong Musician"
+    }
+}
+</script>
+
+</body>
+</html> 
