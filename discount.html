@@ -39,5 +39,55 @@ function applyDiscount(){
 }
 </script>
 
+<div class="container">
+    <form>
+        <div class="form-group">
+        <input type="radio" id="choice_1" name="operations" onclick="chooseOp()" value="Times">
+        <label for="first">*</label> 
+        </div>
+
+        <div class="form-group">
+        <input type="radio" id="choice_2" name="operations" onclick="chooseOp()" value="Divide">
+        <label for="second">/</label> 
+        </div>
+
+        <div class="form-group">
+        <input type="radio" id="choice_3" name="operations" onclick="chooseOp()" value="Exponent">
+        <label for="third">**</label>
+        </div>
+
+    </form>
+
+<p id="result2"> </p>
+
+</div>    
+<script>
+
+function chooseOp()
+{
+   base = document.getElementById("form1_base").value;
+   discount = document.getElementById("form1_discount").value;
+   times = document.getElementById("choice_1").checked;
+   divide = document.getElementById("choice_2").checked;
+   exponent = document.getElementById("choice_3").checked;
+   result2 = 0;
+
+   if(times){
+        result2 = base * discount
+   }
+
+   else if(divide){
+        result2 = base / discount
+   }
+
+   else if(exponent){
+        result2 = base ** discount
+   }
+
+   document.getElementById("result2").innerHTML=result2;
+
+}
+</script>
+
 </body>
 </html> 
