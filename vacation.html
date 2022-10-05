@@ -16,8 +16,17 @@
     <label for="box1_resort">Travel to resort</label>
     </br>
     <input type="button" onclick = "selectVacation()" value="Select a Vacation">
-  </form>
+</form>
 
+<form>
+    <label for="form2_city">Enter City</label>
+    <input type ="text" id="form2_city" name="form2_city" value="City"> <br>
+
+    <label for="form2_price">Enter Price</label>
+    <input type ="text" id="form2_price" name="form2_price" autofocus> <br>
+
+    <input type="button" onclick="updateVacation()" value="Update the vacation">
+</form>
 
 <p id="result"> </p>
 
@@ -52,6 +61,19 @@ function selectVacation(){
 
     result = "Air: " + my_vacation.box1_air + ", Domestic: " + my_vacation.box1_domestic + ", Resort: " + my_vacation.box1_resort
     out.innerHTML = result
+}
+
+function updateVacation(){
+        vacationCity = document.getElementById("form2_city").value
+        vacationPrice = document.getElementById("form2_price").value
+        out = document.getElementById("result")
+
+        my_vacation["city"] = vacationCity
+        my_vacation["price"] = vacationPrice
+
+        result = "City: " + my_vacation.city + ", Price: " + my_vacation.price
+
+        out.innerHTML = result
 }
 </script>
 
